@@ -1,0 +1,40 @@
+{
+  "name": "linear",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "package": "electron-packager . Linear --platform=linux --arch=x64"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://abhinavmir.xyz",
+  "devDependencies": {
+    "electron": "^28.2.2",
+    "electron-builder": "^24.9.1"
+  },
+  "dependencies": {
+    "electron-packager": "^17.1.2"
+  },
+  "build": {
+    "appId": "com.abhinavmir.linear",
+    "linux": {
+      "target": [
+        "deb",
+        "rpm",
+        "AppImage"
+      ],
+      "category": "Utility"
+    },
+    "deb": {
+      "maintainer": "August Radjoe <augustradjoe@pm.me>"
+    },
+    "rpm": {
+      "maintainer": "August Radjoe <augustradjoe@pm.me>"
+    }
+  }
+}
+
