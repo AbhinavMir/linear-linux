@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "package": "electron-packager . Linear --platform=linux --arch=x64"
+    "package": "electron-packager . Linear --platform=linux --arch=x64",
+    "dist": "electron-builder -l appimage --x64"
   },
   "keywords": [],
   "author": "",
