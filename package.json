@@ -22,6 +22,7 @@
   "build": {
     "appId": "com.abhinavmir.linear",
     "linux": {
+      "icon": "linear-app-icon.png",
       "target": [
         "deb",
         "rpm",

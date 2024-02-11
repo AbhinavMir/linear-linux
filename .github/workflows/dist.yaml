@@ -1,0 +1,37 @@
+name: Build Electron App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16' 
+
+    - name: Install Dependencies
+      run: |
+        npm install
+
+    - name: Build AppImage, tar.gz, deb, and rpm
+      run: |
+        npm run dist -- -l appimage --x64
+        npm run dist -- -l tar.gz --x64
+        npm run dist -- -l deb --x64
+        npm run dist -- -l rpm --x64
+
+    # Optional: Upload Artifacts (build outputs) to GitHub Actions
+    - uses: actions/upload-artifact@v3
+      with:
+        name: build-artifacts
+        path: |
+          dist/*.AppImage
+          dist/*.tar.gz
+          dist/*.deb
+          dist/*.rpm
